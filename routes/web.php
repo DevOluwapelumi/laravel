@@ -21,7 +21,19 @@ Route::get('/login', function () {
 });
 Route::get('/index', function () {
     $name = "Instr. Miss Janet";
-    return view('index')->with('name', $name);
+    $school = "SQI";
+
+    // The with method
+    // return view('index')->with('name', $name);
+
+    // The compact method
+    // return view('index')->with('name', $school);
+
+    // The direct method
+    return view('index', [
+        'name' => $name,
+        'school' => $school
+        ]);
 });
 
 
