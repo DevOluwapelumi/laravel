@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return "Welcome Oluwapelumi to Laravel";
+});
+Route::get('/index', function () {
+    $name = "Instr. Miss Janet";
+    return view('index')->with('name', $name);
+});
+
+
