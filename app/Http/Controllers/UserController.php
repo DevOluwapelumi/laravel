@@ -10,19 +10,26 @@ class UserController extends Controller
         $name = "Instr. Miss Janet";
         $school = "SQI";
 
-        // The with method
-    // return view('index')->with('name', $name);
+        // Use either one of the following methods to pass data to the view:
 
-    // The compact method
-     return view('index', compact('name', 'school'));
+        // Method 1: Using the with method
+        // return view('index')->with('name', $name);
 
-    // The direct method
-    return view('index', [
-        'name' => $name,
-        'school' => $school
-        ]);
+        // Method 2: Using the compact method
+        return view('index', compact('name', 'school'));
+
+        // Method 3: Using the direct method
+        // return view('index', [
+        //     'name' => $name,
+        //     'school' => $school
+        // ]);
     }
+
+    public function register(Request $request){
+        return $request->name;
     }
+}
+
 
 
 

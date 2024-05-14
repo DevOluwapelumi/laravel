@@ -69,7 +69,7 @@
                         placeholder="Search"
                     />
                     <button
-                        class="btn btn-outline-success my-2 my-sm-0"
+                        class="btn btn-ouPtline-success my-2 my-sm-0"
                         type="submit"
                     >
                         Search
@@ -78,6 +78,8 @@
             </div>
         </div>
     </nav>
+
+    @yield('main')
     
 
 <script

@@ -22,6 +22,8 @@ Route::get('/login', function () {
 });
 Route::get('/index', [UserController::class, 'index']);
 
+Route::post('/register', [UserController::class, 'register']);
+
 
 
 
