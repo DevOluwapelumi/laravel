@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,21 +20,8 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return "Welcome Oluwapelumi to Laravel";
 });
-Route::get('/index', function () {
-    $name = "Instr. Miss Janet";
-    $school = "SQI";
+Route::get('/index', [UserController::class, 'index']);
 
-    // The with method
-    // return view('index')->with('name', $name);
 
-    // The compact method
-    // return view('index')->with('name', $school);
-
-    // The direct method
-    return view('index', [
-        'name' => $name,
-        'school' => $school
-        ]);
-});
 
 

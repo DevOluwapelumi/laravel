@@ -7,7 +7,8 @@
     <title>Index</title>
 </head>
 <body>
-    <h4>Hello Oluwapelumi, Welcome to Laravel Class!</h4>
-    <p>{{$name}}</p>
+    <h4 class="text-center">Hello Oluwapelumi, Welcome to Laravel Class!</h4>
+    <p><b>Name: </b>{{$name}}</p>
+    <p><b>School:   </b>{{$school}}</p>
 </body>
 </html>
