@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -19,14 +21,23 @@ class UserController extends Controller
         return view('index', compact('name', 'school'));
 
         // Method 3: Using the direct method
-        // return view('index', [
-        //     'name' => $name,
-        //     'school' => $school
-        // ]);
+         return view('index', [
+             'name' => $name,
+             'school' => $school
+         ]);
     }
 
     public function register(Request $request){
-        return $request->name;
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $saveUser = $user->save();
+        if($saveUser) {
+            return view('index')->with('message', 'User saved successfully')->with('status', true);
+        }else {
+            return view('index')->with('message', 'Error occurred. Please try again')->with('status', false);
+        }
     }
 }
 

@@ -3,8 +3,8 @@
 @section("main")
 
     <h4 class="bg-danger text-center">Hello Oluwapelumi, Welcome to Laravel Class!</h4>
-    <p><b>Name: </b>{{$name}}</p>
-    <p><b>School:   </b>{{$school}}</p>
+    {{-- <p><b>Name: </b>{{$name}}</p>
+    <p><b>School:   </b>{{$school}}</p> --}}
 
     <div class="container">
         <div class="row justify-content-center">
@@ -14,6 +14,11 @@
                         <h4 class="text-center mb-4">Register</h4> <hr>
                         <form action="/register" method="POST">
                             @csrf
+                            <div>
+                                @if(isset($message))
+                                <sapn class="alert alert-{{$status ? 'success' : 'danger'}}">{{$message}}</sapn>
+                                @endif
+                            </div>
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
