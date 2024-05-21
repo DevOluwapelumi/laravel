@@ -30,7 +30,9 @@ class UserController extends Controller
     public function register(Request $request){
         $user = new User;
         $user->name = $request->name;
+        $user->userName = $request->userName;
         $user->email = $request->email;
+        $user->phoneNumber = ($request->phoneNumber);
         $user->password = Hash::make($request->password);
         $saveUser = $user->save();
         if($saveUser) {
