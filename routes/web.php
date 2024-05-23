@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\NoteappController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,8 @@ Route::get('/login', function () {
 Route::get('/index', [UserController::class, 'index']);
 
 Route::post('/register', [UserController::class, 'register']);
+
+Route::get('/noteapp', [NoteappController::class, 'shownote']);
 
 
 
