@@ -28,6 +28,9 @@ Route::post('/register', [UserController::class, 'register']);
 Route::get('/noteapp', [NoteappController::class, 'shownote']);
 Route::post('/noteapp_process', [NoteappController::class, 'addnote']);
 
+Route::get('/displaynote', [NoteappController::class, 'displaynote']);
+// Route::post('/noteapp_process', [NoteappController::class, 'addnote']);
+
 
 
 

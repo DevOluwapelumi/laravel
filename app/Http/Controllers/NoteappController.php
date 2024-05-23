@@ -17,8 +17,8 @@ class NoteappController extends Controller
             'content'=>$req->content,
            ]);
            if($insert) {
-            return ($insert);
-           } 
+                return redirect('/displaynote');
+           }
            else {
             return ('Not sent');
            };
@@ -26,6 +26,10 @@ class NoteappController extends Controller
     }
 
     public function displaynote(){
-        
-    }
+        $select=DB::table('noteapp_table')->get();
+       // return $select;
+        return view('noteapp.displaynote', [
+            'allnote'=>$select
+            ]);
+}
 }
