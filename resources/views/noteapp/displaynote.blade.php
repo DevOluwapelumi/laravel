@@ -20,7 +20,7 @@
                             <td>{{ $note->content }}</td>
                             <td>{{ $note->createdat }}</td>
                             <td>
-                                <button class="btn btn-danger ms-2">Delete</button>
+                                <button class="btn btn-danger">Delete</button>
                                 <button class="btn btn-success ms-5">Edit</button>
                             </td>
                         </tr>
