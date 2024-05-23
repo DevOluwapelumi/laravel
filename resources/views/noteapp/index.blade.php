@@ -11,7 +11,7 @@
         <body>
 
             <nav class="nav bg-primary">
-                <a href="" class="nav-link text-white">Create Note |</a>
+                <a href="/noteapp" class="nav-link text-white">Create Note |</a>
                 <a href="" class="nav-link text-white">Display Note |</a>
                 <a href="" class="nav-link text-white">Home Page |</a>
             </nav>

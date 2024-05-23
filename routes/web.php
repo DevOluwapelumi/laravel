@@ -26,6 +26,7 @@ Route::get('/index', [UserController::class, 'index']);
 Route::post('/register', [UserController::class, 'register']);
 
 Route::get('/noteapp', [NoteappController::class, 'shownote']);
+Route::post('/noteapp_process', [NoteappController::class, 'addnote']);
 
 
 
