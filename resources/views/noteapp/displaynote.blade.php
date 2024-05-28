@@ -22,6 +22,7 @@
                             <td>
                                 <button class="btn btn-danger">Delete</button>
                                 <button class="btn btn-success ms-5">Edit</button>
+                                <button class="btn btn-success ms-5">View</button>
                             </td>
                         </tr>
                     @endforeach
