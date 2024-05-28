@@ -29,7 +29,11 @@ Route::get('/noteapp', [NoteappController::class, 'shownote']);
 Route::post('/noteapp_process', [NoteappController::class, 'addnote']);
 
 Route::get('/displaynote', [NoteappController::class, 'displaynote']);
-// Route::post('/noteapp_process', [NoteappController::class, 'addnote']);
+
+Route::get('/viewnote/{id}', [NoteappController::class, 'show']);
+
+Route::post('/displaynote/edit/{id}', [NoteappController::class, 'edit']);
+
 
 
 

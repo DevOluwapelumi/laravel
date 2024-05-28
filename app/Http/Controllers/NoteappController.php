@@ -32,4 +32,11 @@ class NoteappController extends Controller
             'allnote'=>$select
             ]);
 }
+    public function show($id){
+        $show=DB::table('noteapp_table')->where('note_id', $id)->first();
+        return view('noteapp.viewnote', ['note'=>$show]);
+    }
+    public function edit($id){
+        return view('noteapp.editnote');
+    }
 }
