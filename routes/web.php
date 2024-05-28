@@ -32,7 +32,11 @@ Route::get('/displaynote', [NoteappController::class, 'displaynote']);
 
 Route::get('/viewnote/{id}', [NoteappController::class, 'show']);
 
-Route::post('/displaynote/edit/{id}', [NoteappController::class, 'edit']);
+Route::get('/displaynote/edit/{id}', [NoteappController::class, 'edit']);
+Route::post('/displaynote/edit/{id}', [NoteappController::class, 'update']);
+
+// routes/web.php
+Route::delete('/note/{id}', [NoteappController::class, 'destroy'])->name('note.destroy');
 
 
 
