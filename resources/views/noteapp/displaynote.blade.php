@@ -22,12 +22,7 @@
                             <td>{{ $note->content }}</td>
                             <td>{{ $note->createdat }}</td>
                             <td>
-                                {{-- <a href=""><button class="btn btn-danger">Delete</button></a> --}}
-                                <form action="{{ route('note.destroy', $note->note_id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Delete</button>
-                                </form>
+                                <a href="/displaynote/delete/{{$note->note_id}}"><button class="btn btn-danger">Delete</button></a>
                                 <a href="/displaynote/edit/{{$note->note_id}}"><button class="btn btn-success ms-5">Edit</button></a>
                               <a href="/viewnote/{{$note->note_id}}"><button class="btn btn-primary ms-5">View</button></a>
                             </td>

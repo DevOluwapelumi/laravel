@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class NoteappController extends Controller
@@ -54,15 +53,11 @@ class NoteappController extends Controller
         return redirect('/displaynote');
     }
 
-    // app/Http/Controllers/NoteController.php
-public function destroy($id)
+public function delete($id)
 {
-    // Find the note by its ID and delete it
-    $note = User::findOrFail($id);
-    $note->delete();
-
+    $delete=DB::table('noteapp_table')->where('note_id', $id)->delete();
     // Redirect back with a success message
-    return redirect()->route('note.index')->with('success', 'Note deleted successfully');
+    return redirect('/displaynote')->with('success', 'Note deleted successfully');
 }
 
 }
