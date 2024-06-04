@@ -1,0 +1,9 @@
+
+    // To check the route ---
+    php artisan make:model Student -m
+
+    // To Create model ---
+    php artisan make:model Student -m
+
+    // To Create Conroller ---
+    php artisan make:controller StudentController --resource

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NoteappController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,9 @@ Route::get('/displaynote/edit/{id}', [NoteappController::class, 'edit']);
 Route::post('/displaynote/edit/{id}', [NoteappController::class, 'update']);
 
 Route::get('/displaynote/delete/{id}', [NoteappController::class, 'delete']);
+
+
+Route::resource('/student', StudentController::class);
 
 
 
