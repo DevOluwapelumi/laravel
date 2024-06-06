@@ -7,3 +7,6 @@
 
     // To Create Conroller ---
     php artisan make:controller StudentController --resource
+
+    composer require laravel/ui
+    php artisan ui bootstrap --auth

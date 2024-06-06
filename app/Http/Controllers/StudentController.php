@@ -14,7 +14,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $allstudents=Student::all();
+        return view('student.displaystudent',[
+            'students'=>$allstudents]);
     }
 
     /**
@@ -38,7 +40,14 @@ class StudentController extends Controller
         $student=new Student;
       //  $student->full_name=$request->input('fullname');
         $student->full_name=$request->fullname;
-        return $student;
+        $student->phone_number=$request->phonenumber;
+        $student->email=$request->email;
+        $student->gender=$request->gender;
+        $student->address=$request->address;
+        $student->password=$request->password;
+        // return $student;
+        $student->save();
+        return redirect ('/student');
     }
 
     /**
