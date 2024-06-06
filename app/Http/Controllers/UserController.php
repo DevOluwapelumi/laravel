@@ -47,6 +47,7 @@ class UserController extends Controller
 
 
 
+
     //  properties and methods
     //  Acess modifiers = public, private, protected
 

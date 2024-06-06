@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    {[id(Auth::user())]}
     <div class="row">
         <div class="col-12">
             <table class="table table-bordered table-striped mt-5">
@@ -30,6 +31,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @else
+                <div>You are currently logged out</div>
+                @endif
         </div>
     </div>
 </div>
