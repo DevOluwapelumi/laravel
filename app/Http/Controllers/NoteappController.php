@@ -12,19 +12,29 @@ class NoteappController extends Controller
         return view('noteapp.createnote');
     }
     public function addnote(Request $req){
+    //    dd($req);  --- To get the Details
 
-        $insert=DB::table('noteapp_table')->insert([
-            'title'=>$req->title,
+    // $req->image->getClientOriginalName(); -- To get the file image name
+
+     $newname=time().$req->image->getClientOriginalName();
+     $move=$req->image->move(public_path('images/'), $newname);
+     if($move){
+            $insert=DB::table('noteapp_table')->insert([
+           'title'=>$req->title,
             'content'=>$req->content,
-            'user_id'=>Auth::user()->id
-           ]);
+            'user_id'=>Auth::user()->id,
+            'user_profile'=>$newname
+          ]);
            if($insert) {
                 return redirect('/displaynote');
            }
            else {
             return ('Not sent');
            };
-      //  return ('Oluwapelumi Noteapp is processing');
+     } else {
+        return ' not moved';
+     }
+    //  return $req->image->getSize(); --- To get the image Size
     }
 
     public function displaynote(){

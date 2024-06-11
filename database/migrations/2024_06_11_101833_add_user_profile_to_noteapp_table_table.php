@@ -14,7 +14,7 @@ class AddUserProfileToNoteappTableTable extends Migration
     public function up()
     {
         Schema::table('noteapp_table', function (Blueprint $table) {
-            //
+            $table->string('user_profile');
         });
     }
 

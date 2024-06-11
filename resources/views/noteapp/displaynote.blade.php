@@ -10,6 +10,7 @@
                 <thead class="thead-dark text-center">
                     <tr>
                         <th>ID</th>
+                        <th>Profile Image</th>
                         <th>Title</th>
                         <th>Content</th>
                         <th>Created At</th>
@@ -20,14 +21,18 @@
                     @foreach ($allnote as $note)
                         <tr>
                             <td>{{ $note->note_id }}</td>
+                            <td> <div class="text-center">
+                                <img src="/images/{{$note->user_profile}}" alt="" style="max-width: 30px; height: auto; border-radius: 50%;">
+                            </div></td>
                             <td>{{ $note->title }}</td>
                             <td>{{ $note->content }}</td>
                             <td>{{ $note->createdat }}</td>
                             <td>
                                 <a href="/displaynote/delete/{{$note->note_id}}"><button class="btn btn-danger">Delete</button></a>
-                                <a href="/displaynote/edit/{{$note->note_id}}"><button class="btn btn-success ms-5">Edit</button></a>
-                              <a href="/viewnote/{{$note->note_id}}"><button class="btn btn-primary ms-5">View</button></a>
+                                <a href="/displaynote/edit/{{$note->note_id}}"><button class="btn btn-success ms-3">Edit</button></a>
+                              <a href="/viewnote/{{$note->note_id}}"><button class="btn btn-primary ms-3">View Profile</button></a>
                             </td>
+                            
                         </tr>
                     @endforeach
                 </tbody>
