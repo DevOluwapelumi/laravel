@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-    {[id(Auth::user())]}
+    {{-- {[id(Auth::user())]} --}}
+    @if (Auth::user())
     <div class="row">
         <div class="col-12">
             <table class="table table-bordered table-striped mt-5">
@@ -32,8 +33,12 @@
                 </tbody>
             </table>
             @else
+            <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
                 <div>You are currently logged out</div>
-                @endif
+                <a href="/login" style="margin-left: 1rem;">Log in Here!</a>
+            </div>
+            @endif
+            
         </div>
     </div>
 </div>
