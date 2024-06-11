@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class NoteappController extends Controller
 {
@@ -15,6 +16,7 @@ class NoteappController extends Controller
         $insert=DB::table('noteapp_table')->insert([
             'title'=>$req->title,
             'content'=>$req->content,
+            'user_id'=>Auth::user()->id
            ]);
            if($insert) {
                 return redirect('/displaynote');
@@ -26,7 +28,8 @@ class NoteappController extends Controller
     }
 
     public function displaynote(){
-        $select=DB::table('noteapp_table')->get();
+      //  $select=DB::table('noteapp_table')->get();
+        $select=DB::table('noteapp_table')->where('user_id', Auth::user()->id)->get();
        // return $select;
         return view('noteapp.displaynote', [
             'allnote'=>$select

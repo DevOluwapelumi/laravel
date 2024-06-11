@@ -10,3 +10,9 @@
 
     composer require laravel/ui
     php artisan ui bootstrap --auth
+
+    // To add column to a table ---
+    php artisan make:migration add_user_id_to_noteapp_table_table
+
+    after the above column migrate --- 
+    php artisan migrate
