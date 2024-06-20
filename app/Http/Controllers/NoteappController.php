@@ -37,14 +37,42 @@ class NoteappController extends Controller
     //  return $req->image->getSize(); --- To get the image Size
     }
 
-    public function displaynote(){
-      //  $select=DB::table('noteapp_table')->get();
-        $select=DB::table('noteapp_table')->where('user_id', Auth::user()->id)->get();
-       // return $select;
-        return view('noteapp.displaynote', [
-            'allnote'=>$select
-            ]);
+    public function displaynote()
+{
+    $user = Auth::user();
+    if ($user) {
+        $select = DB::table('noteapp_table')
+                    ->where('user_id', $user->id)
+                    ->get();
+    } else {
+        $select = DB::table('noteapp_table')
+                    ->get();
+    }
+
+    return view('noteapp.displaynote', [
+        'allnote' => $select
+    ]);
 }
+
+
+public function displayContact()
+{
+    $user = Auth::user();
+    if ($user) {
+        $select = DB::table('contact_table')
+                    ->where('user_id', $user->id)
+                    ->get();
+    } else {
+        $select = DB::table('contact_table')
+                    ->where('user_id')
+                    ->get();
+    }
+
+    return view('Contact.displayContact', [
+        'allcontact' => $select
+    ]);
+}
+
     public function show($id){
         $show=DB::table('noteapp_table')->where('note_id', $id)->first();
         return view('noteapp.viewnote', ['note'=>$show]);

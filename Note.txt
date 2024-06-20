@@ -16,3 +16,6 @@
 
     after the above column migrate --- 
     php artisan migrate
+
+    // To Create a MiddleWare //
+    php artisan make:middleware NoteappMiddleware
